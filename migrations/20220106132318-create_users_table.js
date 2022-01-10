@@ -25,6 +25,14 @@ module.exports = {
             idDep: {
                 type: Sequelize.INTEGER(11),
                 allowNull: false,
+            },
+            createdAt: {
+                allowNull: false,
+                type: Sequelize.DATE
+            },
+            updatedAt: {
+                allowNull: false,
+                type: Sequelize.DATE
             }
         });
 

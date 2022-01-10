@@ -1,22 +1,16 @@
 const Sequelize = require('sequelize');
-const User = (sequelize) =>
-    sequelize.define('users', {
+const Departement = (sequelize) =>
+    sequelize.define('departements', {
+
         name: {
             type: Sequelize.STRING,
             allowNull: false,
             unique: true
         },
-        email: {
-            type: Sequelize.STRING,
-            allowNull: false,
-            unique: true
-        },
-        password: {
+        Description: {
             type: Sequelize.STRING,
             allowNull: false,
             unique: true
         },
     });
-
-// User.belongsTo(Departement)
-module.exports = User
+module.exports = Departement

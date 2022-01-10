@@ -1,1 +1,29 @@
-<h1>gnsjdnhgsjkdn</h1>
+<h1>All Users</h1>
+<a class="btn btn-primary mb-1" href="/createUser">create User</a>
+<table class="table table-bordered">
+ <thead>
+   <tr>
+      <th scope="col">#</th>
+     <th scope="col">Name</th>
+     <th scope="col">Email</th>
+      <th scope="col">Password</th>
+      <th scope="col">Action</th>
+      
+   </tr>
+ </thead>
+ <tbody>
+   <tr>
+      {{#each users as | user |}}
+         <th scope="row">1</th>
+         <td>{{user.name}}</td>
+         <td>{{user.email}}</td>
+         <td>{{user.password}}</td>
+         <td>
+            <a class="btn btn-primary" href="#">View</a>
+            <a class="btn btn-success" href="#">Edit</a>
+            <a class="btn btn-danger" href="#">Delete</a>
+         </td>
+      {{/each}}
+   </tr>
+ </tbody>
+</table>
