@@ -4,6 +4,6 @@ const departementsRouter = require('./deparetement');
 const routes = {};
 
 routes.usersRouter = usersRouter;
-// routes.departementsRouter = departementsRouter;
+routes.departementsRouter = departementsRouter;
 
 module.exports = routes

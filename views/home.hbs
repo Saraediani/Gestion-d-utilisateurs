@@ -1,29 +1,63 @@
+
 <h1>All Users</h1>
-<a class="btn btn-primary mb-1" href="/createUser">create User</a>
+<a class="btn btn-primary mb-1" href="/user/createUser">create User</a>
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  New Department
+</button>
 <table class="table table-bordered">
+
  <thead>
    <tr>
-      <th scope="col">#</th>
-     <th scope="col">Name</th>
+     <th scope="col">id</th>
+      <th scope="col">Name</th>
      <th scope="col">Email</th>
-      <th scope="col">Password</th>
+      <th scope="col">departement</th>
       <th scope="col">Action</th>
-      
    </tr>
  </thead>
- <tbody>
-   <tr>
-      {{#each users as | user |}}
-         <th scope="row">1</th>
+    <tbody>
+        {{#each users as | user |}}
+         <tr>
+     
+         <td scope="row">{{user.id}}</td>
          <td>{{user.name}}</td>
          <td>{{user.email}}</td>
-         <td>{{user.password}}</td>
+         <td>{{user.departement.name}}</td>
          <td>
-            <a class="btn btn-primary" href="#">View</a>
-            <a class="btn btn-success" href="#">Edit</a>
-            <a class="btn btn-danger" href="#">Delete</a>
+            <a class="btn btn-success" href="/user/updateUser/{{user.id}}">Edit</a>
+            <a class="btn btn-danger" href="/user/deletUser/{{user.id}}">Delete</a>
          </td>
-      {{/each}}
    </tr>
+      {{/each}}
+
  </tbody>
 </table>
+<!-- Button trigger modal -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+       <form action="/departement/createDeparetement" method="POST">
+  <div class="form-group">
+    <label for="exampleInputEmail1">Name</label>
+    <input type="text" name="name" class="form-control">
+  </div>
+   <div class="form-group">
+    <label for="exampleInputEmail1">Description</label>
+    <input type="text" name="Description" class="form-control">
+  </div>
+      </div>
+        <button type="submit" class="btn btn-primary">Save </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+ </div>
